@@ -1,0 +1,31 @@
+compiler: ghc-9.8.2
+resolver: nightly-2024-09-13
+
+allow-newer: true
+
+rebuild-ghc-options: true
+
+ghc-options:
+  "$targets": >-
+    -Werror=compat-unqualified-imports
+    -Werror=deprecations
+    -Werror=dodgy-imports
+    -Werror=incomplete-patterns
+    -Werror=incomplete-record-updates
+    -Werror=incomplete-uni-patterns
+    -Werror=name-shadowing
+    -Werror=partial-type-signatures
+    -Werror=prepositive-qualified-module
+    -Werror=type-defaults
+    -Werror=typed-holes
+    -fprint-explicit-kinds
+    -Wno-redundant-constraints
+    -fenable-th-splice-warnings
+
+  "$everything": >-
+    -fshow-warning-groups
+    -fprint-explicit-foralls
+    -Wno-everything
+
+packages:
+  - Wut

@@ -1,0 +1,27 @@
+name: &project-name Wut
+version: "0.1.0.0"
+author: "Vanson Samuel <vansonsamuel@acm.org>"
+copyright: "Copyright © 2024 Vanson Samuel All Rights Reserved"
+build-type: "Simple"
+
+default-extensions:
+  - OverloadedLists
+  - RebindableSyntax
+
+dependencies:
+  - base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+
+executables:
+  Wut:
+    main: Main.hs
+    source-dirs: app
+    dependencies:
+      - Wut
+
+tests:
+  pipes_scratch_test:
+    main: Spec.hs
+    source-dirs: test

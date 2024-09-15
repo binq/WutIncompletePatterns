@@ -1,0 +1,6 @@
+services:
+  console:
+    build:
+      context: .
+    volumes:
+      - .:/app:cached
